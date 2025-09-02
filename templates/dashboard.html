@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submissions Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #0056b3; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 95%;">
+        <h1>Submissions Dashboard</h1>
+        <a href="/">← Back to Form</a>
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Org Name</th>
+                    <th>Mission</th>
+                    <th>Country</th>
+                    <th>Founder Gender</th>
+                    <th>Funding Sought (€)</th>
+                    <th>AI Keywords</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                <tr>
+                    <td>{{ submission['id'] }}</td>
+                    <td>{{ submission['org_name'] }}</td>
+                    <td>{{ submission['mission'] }}</td>
+                    <td>{{ submission['country'] }}</td>
+                    <td>{{ submission['founder_gender'] }}</td>
+                    <td>{{ submission['funding_amount'] }}</td>
+                    <td>{{ submission['ai_keywords'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

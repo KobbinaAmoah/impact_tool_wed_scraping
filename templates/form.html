@@ -1,0 +1,65 @@
+<!-- copy the full HTML code from the previous step here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Impact Self-Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Social Impact Self-Assessment</h1>
+        <p>Please fill out the form below to help us understand your impact and funding needs.</p>
+        <form action="/submit" method="post">
+            <!-- All the form sections from the previous step go here -->
+            <!-- Section 1: Organization Basics -->
+            <div class="form-section">
+                <h2>Section 1: Organization Basics</h2>
+                <label for="org_name">Q1.1: Name of your social enterprise?</label>
+                <input type="text" id="org_name" name="org_name" required>
+                <!-- ... other fields ... -->
+                 <label for="mission">Q1.4: One-sentence primary mission?</label>
+                <textarea id="mission" name="mission" rows="2"></textarea>
+            </div>
+            <!-- Section 2: The Problem -->
+            <div class="form-section">
+                <h2>Section 2: The Problem</h2>
+                <label for="problem_addressed">Q2.1: What specific social or environmental problem are you addressing?</label>
+                <textarea id="problem_addressed" name="problem_addressed" rows="3"></textarea>
+                <!-- ... other fields ... -->
+            </div>
+            <!-- Section 3: The Solution & Impact -->
+            <div class="form-section">
+                <h2>Section 3: The Solution & Impact</h2>
+                <label for="solution">Q3.1: What are your main products, services, or programs?</label>
+                <textarea id="solution" name="solution" rows="3"></textarea>
+                <!-- ... other fields ... -->
+                <label>Q3.4: Which UN SDGs does your work contribute to? (Select up to 3)</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="sdg1" name="sdg" value="1_No_Poverty"><label for="sdg1">1. No Poverty</label><br>
+                    <input type="checkbox" id="sdg2" name="sdg" value="2_Zero_Hunger"><label for="sdg2">2. Zero Hunger</label><br>
+                    <input type="checkbox" id="sdg3" name="sdg" value="3_Good_Health"><label for="sdg3">3. Good Health and Well-being</label><br>
+                    <input type="checkbox" id="sdg4" name="sdg" value="4_Quality_Education"><label for="sdg4">4. Quality Education</label><br>
+                    <!-- ... etc ... -->
+                </div>
+            </div>
+            <!-- Section 4 & 5 ... -->
+            <div class="form-section">
+                <h2>Section 5: Founder Information</h2>
+                <label for="founder_name">Q5.1: Name of the primary founder/CEO?</label>
+                <input type="text" id="founder_name" name="founder_name">
+
+                <label for="founder_gender">Q5.2: Gender of the primary founder/CEO?</label>
+                <select id="founder_gender" name="founder_gender">
+                    <option value="Woman">Woman</option>
+                    <option value="Man">Man</option>
+                    <option value="Non-binary">Non-binary</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+            </div>
+            <button type="submit">Submit Assessment</button>
+        </form>
+    </div>
+</body>
+</html>
